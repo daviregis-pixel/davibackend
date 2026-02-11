@@ -1,0 +1,147 @@
+1. O que é o Node.js? Explique sua especificidade e por que ele é considerado um ambiente de execução e não uma linguagem de programação.
+
+Node.js é um ambiente de execução (runtime) que permite rodar código JavaScript fora do navegador, como no servidor ou no próprio computador.
+
+Ele não é uma linguagem de programação, porque quem programa continua usando JavaScript. O Node.js apenas fornece o ambiente e os recursos necessários (como acesso ao sistema de arquivos, rede, banco de dados etc.) para que o JavaScript possa ser executado fora do navegador.
+
+2. Qual a diferença entre Node.js e JavaScript executado no navegador? Cite pelo menos duas diferenças.
+
+Ambiente de execução
+
+No navegador: roda no cliente (front-end).
+
+No Node.js: roda no servidor (back-end).
+
+APIs disponíveis
+
+No navegador: possui APIs como DOM, window, document.
+
+No Node.js: possui APIs como filesystem (fs), http, path, mas não tem DOM.
+
+3. O que é o V8 Engine e qual sua importância para o funcionamento do Node.js?
+
+O V8 Engine é o motor JavaScript desenvolvido pelo Google (usado no Chrome).
+Ele é responsável por interpretar e executar o código JavaScript.
+
+No Node.js, o V8 é o componente que executa o JavaScript de forma rápida e eficiente, convertendo o código em linguagem de máquina.
+
+4. Explique o conceito de E/S não bloqueador no Node.js. Por que isso melhora o desempenho das aplicações?
+
+E/S (Entrada e Saída) não bloqueador significa que o Node.js não espera uma operação terminar (como ler um arquivo ou acessar um banco) para continuar executando outras tarefas.
+
+Em vez de bloquear o programa, ele registra uma função de retorno (callback) e continua executando outras tarefas.
+
+Isso melhora o desempenho porque:
+
+Permite lidar com muitas requisições ao mesmo tempo.
+
+Evita que o servidor fique “parado” esperando uma resposta.
+
+5. O que é o Event Loop? Descreva, de forma resumida, como ele funciona.
+
+O Event Loop é o mecanismo que permite ao Node.js executar operações assíncronas.
+
+Ele funciona assim:
+
+Executa o código principal.
+
+Quando encontra uma operação assíncrona (ex: leitura de arquivo), envia para o sistema processar.
+
+Quando a operação termina, a função de retorno é colocada na fila.
+
+O Event Loop verifica a fila e executa as funções pendentes.
+
+Isso permite que o Node.js seja eficiente mesmo usando apenas uma thread principal.
+
+6. O que são módulos no Node.js? Explique a diferença entre:
+
+Módulos internos (core modules)
+São módulos que já vêm com o Node.js, como:
+
+fs
+
+http
+
+path
+
+Não precisam ser instalados.
+
+Módulos externos
+São instalados via npm, como:
+
+express
+
+lodash
+
+axios
+
+Ficam na pasta node_modules.
+
+Módulos criados pelo desenvolvedor
+São arquivos criados dentro do próprio projeto, exportando funções, classes ou variáveis para serem reutilizadas.
+
+7. Para que serve o arquivo package.json em um projeto Node.js? Cite pelo menos três informações que ele pode conter.
+
+O package.json organiza e descreve o projeto.
+
+Ele pode conter:
+
+Nome e versão do projeto
+
+Dependências
+
+Scripts (ex: "start": "node index.js")
+
+Autor
+
+Licença
+
+8. O que é o npm? Explique sua função no desenvolvimento de aplicações Node.js.
+
+O npm (Node Package Manager) é o gerenciador de pacotes do Node.js.
+
+Ele permite:
+
+Instalar bibliotecas
+
+Gerenciar dependências
+
+Atualizar pacotes
+
+Publicar pacotes
+
+Ele facilita o reaproveitamento de código e acelera o desenvolvimento.
+
+9. O que é uma API REST e como o Node.js pode ser usado para desenvolvê-la?
+
+Uma API REST é uma interface que permite comunicação entre sistemas usando o protocolo HTTP (GET, POST, PUT, DELETE).
+
+O Node.js pode ser usado para criar APIs REST utilizando módulos como:
+
+http (nativo)
+
+express (framework)
+
+Com ele, é possível:
+
+Criar rotas
+
+Receber requisições
+
+Enviar respostas em JSON
+
+Conectar com bancos de dados
+
+10. Cite duas vantagens e duas desvantagens do uso do Node.js em aplicações web.
+
+Vantagens:
+
+Alto desempenho para aplicações em tempo real.
+
+Mesmo JavaScript no front-end e no back-end.
+
+Desvantagens:
+
+Não é ideal para tarefas pesadas de CPU.
+
+Código assíncrono pode ficar complexo se mal estruturado.
