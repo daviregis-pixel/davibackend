@@ -1,0 +1,266 @@
+1. Escreva um programa que mostre na tela a seguinte contagem: 6 7 8 9 10 11
+Acabou!
+for i in range(6, 12):
+    print(i, end=" ")
+print("\nAcabou!")
+
+2. Faça um algoritmo que mostre na tela a seguinte contagem: 10 9 8 7 6 5 4 3
+Acabou!
+for i in range(10, 2, -1):
+    print(i, end=" ")
+print("\nAcabou!")
+
+
+3. Crie um aplicativo que mostre na tela a seguinte contagem: 0 3 6 9 12 15 18
+Acabou!
+for i in range(0, 19, 3):
+    print(i, end=" ")
+print("\nAcabou!")
+
+
+4. Desenvolva um programa que mostre na tela a seguinte contagem: 100 95 90 85 80
+... 0 Acabou!
+for i in range(100, -1, -5):
+    print(i, end=" ")
+print("Acabou!")
+
+
+5. Faça um algoritmo que pergunte ao usuário um número inteiro e positivo qualquer e
+mostre uma contagem até esse valor: Ex: Digite um valor: 35 Contagem: 1 2 3 4 5 6
+7 ... 33 34 35 Acabou!
+valor = int(input("Digite um valor: "))
+
+for i in range(1, valor + 1):
+    print(i, end=" ")
+
+print("Acabou!")
+
+
+6. Desenvolva um algoritmo que mostre uma contagem regressiva de 30 até 1,
+marcando os números que forem divisíveis por 4, exatamente como mostrado
+abaixo: 30 29 [28] 27 26 25 [24] 23 22 21 [20] 19 18 17 [16]...
+for i in range(30, 0, -1):
+    if i % 4 == 0:
+        print(f"[{i}]", end=" ")
+    else:
+        print(i, end=" ")
+
+
+7. Crie um algoritmo que leia o valor inicial da contagem, o valor final e o incremento,
+mostrando em seguida todos os valores no intervalo: Ex: Digite o primeiro Valor: 3
+Digite o último Valor: 10 Digite o incremento: 2 Contagem: 3 5 7 9 Acabou!
+inicio = int(input("Digite o primeiro valor: "))
+fim = int(input("Digite o último valor: "))
+incremento = int(input("Digite o incremento: "))
+
+for i in range(inicio, fim + 1, incremento):
+    print(i, end=" ")
+
+print("Acabou!")
+
+
+8. O programa acima vai ter um problema quando digitarmos o primeiro valor maior
+que o último. Resolva esse problema com um código que funcione em qualquer
+situação.
+inicio = int(input("Digite o primeiro valor: "))
+fim = int(input("Digite o último valor: "))
+incremento = int(input("Digite o incremento: "))
+
+if incremento == 0:
+    print("Incremento não pode ser zero!")
+else:
+    if inicio < fim:
+        for i in range(inicio, fim + 1, abs(incremento)):
+            print(i, end=" ")
+    else:
+        for i in range(inicio, fim - 1, -abs(incremento)):
+            print(i, end=" ")
+
+print("Acabou!")
+
+
+9. Crie um programa que calcule e mostre na tela o resultado da soma entre 6 + 8 + 10
++ 12 + 14 + ... + 98 + 100.
+soma = 0
+for i in range(6, 101, 2):
+    soma += i
+
+print("Resultado:", soma)
+
+
+10. Desenvolva um aplicativo que mostre na tela o resultado da expressão 500 + 450 +
+400 + 350 + 300 + ... + 50 + 0.
+soma = 0
+for i in range(500, -1, -50):
+    soma += i
+
+print("Resultado:", soma)
+
+
+11. Faça um programa que leia 7 números inteiros e no final mostre o somatório entre
+eles.
+soma = 0
+
+for i in range(7):
+    num = int(input("Digite um número: "))
+    soma += num
+
+print("Somatório:", soma)
+
+
+12. Crie um programa que leia 6 números inteiros e no final mostre quantos deles são
+pares e quantos são ímpares.
+pares = 0
+impares = 0
+
+for i in range(6):
+    num = int(input("Digite um número: "))
+    if num % 2 == 0:
+        pares += 1
+    else:
+        impares += 1
+
+print("Pares:", pares)
+print("Ímpares:", impares)
+
+
+13. Desenvolva um programa que faça o sorteio de 20 números entre 0 e 10 e mostre
+na tela: a) Quais foram os números sorteados b) Quantos números estão acima de 5
+c) Quantos números são divisíveis por 3
+import random
+
+numeros = []
+acima5 = 0
+div3 = 0
+
+for i in range(20):
+    n = random.randint(0, 10)
+    numeros.append(n)
+
+    if n > 5:
+        acima5 += 1
+    if n % 3 == 0:
+        div3 += 1
+
+print("Números sorteados:", numeros)
+print("Acima de 5:", acima5)
+print("Divisíveis por 3:", div3)
+
+
+14. Faça um aplicativo que leia o preço de 8 produtos. No final, mostre na tela qual foi o
+maior e qual foi o menor preço digitados.
+precos = []
+
+for i in range(8):
+    preco = float(input("Digite o preço: "))
+    precos.append(preco)
+
+print("Maior preço:", max(precos))
+print("Menor preço:", min(precos))
+
+
+15. Crie um algoritmo que leia a idade de 10 pessoas, mostrando no final: a) Qual é a
+média de idade do grupo b) Quantas pessoas tem mais de 18 anos c) Quantas
+pessoas tem menos de 5 anos d) Qual foi a maior idade lida
+idades = []
+maiores18 = 0
+menores5 = 0
+
+for i in range(10):
+    idade = int(input("Digite a idade: "))
+    idades.append(idade)
+
+    if idade > 18:
+        maiores18 += 1
+    if idade < 5:
+        menores5 += 1
+
+print("Média:", sum(idades) / 10)
+print("Maiores de 18:", maiores18)
+print("Menores de 5:", menores5)
+print("Maior idade:", max(idades))
+
+
+16. Faça um programa que leia a idade e o sexo de 5 pessoas, mostrando no final: a)
+Quantos homens foram cadastrados b) Quantas mulheres foram cadastradas c) A
+média de idade do grupo d) A média de idade dos homens e) Quantas mulheres tem
+mais de 20 anos
+total_idade = 0
+homens = 0
+mulheres = 0
+idade_homens = 0
+mulheres_20 = 0
+
+for i in range(5):
+    idade = int(input("Idade: "))
+    sexo = input("Sexo (M/F): ").upper()
+
+    total_idade += idade
+
+    if sexo == "M":
+        homens += 1
+        idade_homens += idade
+    elif sexo == "F":
+        mulheres += 1
+        if idade > 20:
+            mulheres_20 += 1
+
+print("Homens:", homens)
+print("Mulheres:", mulheres)
+print("Média do grupo:", total_idade / 5)
+
+if homens > 0:
+    print("Média idade homens:", idade_homens / homens)
+
+print("Mulheres com mais de 20 anos:", mulheres_20)
+
+
+17. Desenvolva um aplicativo que leia o peso e a altura de 7 pessoas, mostrando no
+final: a) Qual foi a média de altura do grupo b) Quantas pessoas pesam mais de
+90Kg c) Quantas pessoas que pesam menos de 50Kg tem menos de 1.60m d)
+Quantas pessoas que medem mais de 1.90m pesam mais de 100Kg.
+total_altura = 0
+mais90 = 0
+menos50_menos160 = 0
+mais190_mais100 = 0
+
+for i in range(7):
+    peso = float(input("Peso: "))
+    altura = float(input("Altura: "))
+
+    total_altura += altura
+
+    if peso > 90:
+        mais90 += 1
+    if peso < 50 and altura < 1.60:
+        menos50_menos160 += 1
+    if altura > 1.90 and peso > 100:
+        mais190_mais100 += 1
+
+print("Média de altura:", total_altura / 7)
+print("Mais de 90kg:", mais90)
+print("Menos de 50kg e menos de 1.60m:", menos50_menos160)
+print("Mais de 1.90m e mais de 100kg:", mais190_mais100)
+
+
+18. $$DESAFIO$$
+Vamos melhorar o jogo. A partir de agora, o
+computador vai sortear um número entre 1 e 10 e o jogador vai ter 4 tentativas para
+tentar acertar.
+import random
+
+numero = random.randint(1, 10)
+
+for tentativa in range(1, 5):
+    palpite = int(input(f"Tentativa {tentativa}/4 - Digite um número: "))
+
+    if palpite == numero:
+        print("Parabéns! Você acertou!")
+        break
+    else:
+        print("Errou!")
+
+else:
+    print("Suas tentativas acabaram!")
+    print("O número era:", numero)
+
